@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li>
+            <a href="https://facebook.com" target="_blank" class="facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com" target="_blank" class="twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>
+          I am a web developer with a passion for creating beautiful and
+          responsive websites.
+        </p>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I'm a full-stack web developer with experience in both front-end and
+          back-end technologies.
+        </p>
+      </section>
+
+      <section id="portfolio">
+        <h2>My Projects</h2>
+        <div class="project-gallery">
+          <div class="project">
+            <h3>
+              <i class="fas fa-file-alt"></i> Project 1: Personal Portfolio
+              Website
+            </h3>
+            <p>
+              A responsive personal portfolio website built using HTML, CSS, and
+              JavaScript. This project showcases my skills, projects, and
+              experience in a visually appealing layout.
+            </p>
+          </div>
+          <div class="project">
+            <h3>
+              <i class="fas fa-shopping-cart"></i> Project 2: E-commerce
+              Platform
+            </h3>
+            <p>
+              An e-commerce platform developed with React and Node.js. This
+              project includes features such as user authentication, product
+              listings, and a shopping cart.
+            </p>
+          </div>
+          <!-- Add more projects as necessary -->
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="submit_form.php" method="post">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://linkedin.com" target="_blank"
+          ><i class="fab fa-linkedin"></i> LinkedIn</a
+        >
+        <a href="https://github.com" target="_blank"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+      </div>
+    </footer>
+
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        padding: 10px 0; /* Adjusted padding for top and bottom */
+      }
+
+      nav {
+        max-width: 1200px; /* Set a max width for the nav */
+        margin: 0 auto; /* Center the nav */
+        padding: 0 20px; /* Add horizontal padding */
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center; /* Center items */
+      }
+
+      nav ul li {
+        margin: 0 15px; /* Space between items */
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      nav ul li a i {
+        margin-right: 5px; /* Space between icon and text */
+        font-size: 1.2rem; /* Icon size */
+      }
+
+      nav ul li a:hover {
+        color: #ff6347; /* Default hover color for nav links */
+      }
+
+      nav ul li a:focus {
+        outline: 3px solid #ff6347; /* Focus outline for accessibility */
+      }
+
+      section {
+        padding: 50px;
+        margin: 20px 0;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      h3 {
+        color: #333;
+        margin-top: 15px; /* Space above project titles */
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .social-links a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      .social-links a i {
+        margin-right: 5px; /* Space between icon and text */
+        font-size: 1.2rem; /* Icon size */
+      }
+
+      /* Authentic colors for social media icons */
+      .facebook:hover {
+        color: #3b5998; /* Facebook hover color */
+      }
+
+      .twitter:hover {
+        color: #1da1f2; /* Twitter hover color */
+      }
+
+      .social-links a[href*='linkedin.com']:hover {
+        color: #0077b5; /* LinkedIn hover color */
+      }
+
+      .social-links a[href*='github.com']:hover {
+        color: #333; /* GitHub hover color */
+      }
+
+      .social-links a:focus {
+        outline: 3px solid #ff6347; /* Focus outline for accessibility */
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      label {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #ff6347; /* Change border color on focus */
+        outline: none; /* Remove default outline */
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      button:hover {
+        background-color: #ff6347;
+      }
+
+      button:active {
+        background-color: #e5533d; /* Darker shade when clicked */
+      }
+
+      button:focus {
+        outline: 3px solid #ff6347; /* Focus outline for accessibility */
+      }
+
+      a:hover {
+        color: #ff6347;
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav ul {
+          flex-direction: column; /* Stack items vertically on small screens */
+          align-items: center;
+        }
+
+        section {
+          padding: 30px; /* Reduce padding on smaller screens */
+        }
+
+        form {
+          width: 90%; /* Make form responsive */
+        }
+
+        h1 {
+          font-size: 1.5rem; /* Adjust heading size for smaller screens */
+        }
+
+        h2 {
+          font-size: 1.25rem; /* Adjust subheading size for smaller screens */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        nav ul li {
+          margin: 10px 0; /* Adjust margin for mobile */
+        }
+
+        button {
+          width: 100%; /* Make button full width on mobile */
+        }
+      }
+    </style>
+  </body>
+</html>
