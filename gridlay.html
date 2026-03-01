@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header">Header</div>
+      <div class="sidebar">Sidebar</div>
+      <div class="content">Content</div>
+      <div class="footer">Footer</div>
+      <div class="extra">Extra</div>
+    </div>
+  </body>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        'header header header'
+        'sidebar content extra'
+        'footer footer footer';
+      grid-gap: 16px;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #4caf50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-size: large;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .content {
+      grid-area: content;
+      background-color: #e0f7fa;
+      padding: 20px;
+    }
+
+    .extra {
+      grid-area: extra;
+      background-color: #ffe082;
+      padding: 20px;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #607d8b;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-size: large;
+    }
+  </style>
+</html>

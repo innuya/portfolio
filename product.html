@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Landing Page</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --accent-color: #e67e22;
+        --light-bg: #f9f9f9;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        background-color: var(--light-bg);
+        color: var(--primary-color);
+      }
+
+      header {
+        background: url('https://via.placeholder.com/1200x400') no-repeat center
+          center/cover;
+        padding: 80px 20px;
+        color: white;
+        text-align: center;
+      }
+
+      header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        margin: 0 0 20px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .product-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 60px 20px;
+        background-color: white;
+      }
+
+      .product-image {
+        flex: 1;
+        max-width: 500px;
+        padding: 20px;
+      }
+
+      .product-image img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-details {
+        flex: 1;
+        max-width: 500px;
+        padding: 20px;
+      }
+
+      .product-details h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .product-details p {
+        font-size: 1rem;
+        color: #444;
+      }
+
+      .cta {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      .cta h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .cta button {
+        background-color: white;
+        color: var(--accent-color);
+        border: none;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .cta button:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Experience the Future of Productivity</h1>
+      <p>
+        Our latest smart device helps you stay organized, connected, and
+        efficient every day.
+      </p>
+    </header>
+
+    <section class="product-section">
+      <div class="product-image">
+        <img src="https://via.placeholder.com/500x400" alt="Product Image" />
+      </div>
+      <div class="product-details">
+        <h2>SmartDevice X100</h2>
+        <p>
+          The SmartDevice X100 combines elegant design, intuitive controls, and
+          powerful features to simplify your life. Whether you're working from
+          home or on the go, it adapts to your needs seamlessly. Enjoy voice
+          control, smart integrations, and real-time insights at your
+          fingertips.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h3>Order Yours Today</h3>
+      <button>Buy Now</button>
+    </section>
+  </body>
+</html>
