@@ -1,336 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Chanjel Thomas | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a121b;
+        --bg-soft: #10253a;
+        --card: rgba(255, 255, 255, 0.08);
+        --line: rgba(255, 255, 255, 0.16);
+        --text: #f4f7fb;
+        --muted: #bad0e6;
+        --accent: #2dd4bf;
+        --accent-2: #f59e0b;
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 15% 5%, #18466e 0%, transparent 38%),
+          radial-gradient(circle at 92% 15%, #174a62 0%, transparent 32%),
+          linear-gradient(145deg, #071018, #112b43 45%, #071018 100%);
+      }
+
+      .grain {
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+        background-size: 3px 3px;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .container {
+        width: min(92vw, var(--max));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        background: rgba(7, 16, 24, 0.8);
+        border-bottom: 1px solid var(--line);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 0;
+      }
+
+      .brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        padding: 0.42rem 0.65rem;
+        border-radius: 999px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(45, 212, 191, 0.2);
+      }
+
+      .hero {
+        min-height: 85vh;
+        display: grid;
+        align-content: center;
+        gap: 1.3rem;
+        padding: 4rem 0 2rem;
+      }
+
+      .eyebrow {
+        width: fit-content;
+        background: rgba(45, 212, 191, 0.18);
+        border: 1px solid rgba(45, 212, 191, 0.45);
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        color: #a3f4e8;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.1rem, 4.7vw, 4rem);
+        line-height: 1.05;
+        max-width: 14ch;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.1rem;
+        max-width: 65ch;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 0.8rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        color: #041317;
+        background: var(--accent);
+        font-weight: 700;
+        padding: 0.75rem 1.2rem;
+        border-radius: 0.8rem;
+        transition: transform 0.2s ease;
+      }
+
+      .btn.secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 2.2rem 0;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.7rem;
+        margin: 0 0 1rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+
+      .split {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .chips {
+        display: flex;
+        gap: 0.55rem;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        background: rgba(245, 158, 11, 0.17);
+        border: 1px solid rgba(245, 158, 11, 0.5);
+        color: #ffe1ae;
+        border-radius: 999px;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.87rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .timeline article h3,
+      .project h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .timeline p,
+      .project p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+      }
+
+      .projects {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        gap: 0.9rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .contact-grid a {
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 1.5rem;
+      }
+
+      footer p {
+        margin: 0;
+        padding: 1rem 0 1.4rem;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: rise 0.7s ease forwards;
+      }
+
+      .reveal:nth-child(2) {
+        animation-delay: 0.08s;
+      }
+
+      .reveal:nth-child(3) {
+        animation-delay: 0.16s;
+      }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .split,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="grain" aria-hidden="true"></div>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#home"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="#about"><i class="fas fa-user"></i> About</a>
-          </li>
-          <li>
-            <a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
-          </li>
-          <li>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-          <li>
-            <a href="https://facebook.com" target="_blank" class="facebook"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://twitter.com" target="_blank" class="twitter"
-              ><i class="fab fa-twitter"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
+      <div class="container">
+        <nav>
+          <div class="brand">CHANJEL THOMAS</div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#training">Training</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>
-          I am a web developer with a passion for creating beautiful and
-          responsive websites.
+    <main class="container">
+      <section class="hero" id="about">
+        <div class="eyebrow reveal">MERN Stack Developer</div>
+        <h1 class="reveal">Building responsive and practical web experiences.</h1>
+        <p class="reveal">
+          Postgraduate in IMCA from M G University with focused MERN stack training and
+          hands-on project development in frontend and backend systems.
         </p>
-      </section>
-
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          I'm a full-stack web developer with experience in both front-end and
-          back-end technologies.
-        </p>
-      </section>
-
-      <section id="portfolio">
-        <h2>My Projects</h2>
-        <div class="project-gallery">
-          <div class="project">
-            <h3>
-              <i class="fas fa-file-alt"></i> Project 1: Personal Portfolio
-              Website
-            </h3>
-            <p>
-              A responsive personal portfolio website built using HTML, CSS, and
-              JavaScript. This project showcases my skills, projects, and
-              experience in a visually appealing layout.
-            </p>
-          </div>
-          <div class="project">
-            <h3>
-              <i class="fas fa-shopping-cart"></i> Project 2: E-commerce
-              Platform
-            </h3>
-            <p>
-              An e-commerce platform developed with React and Node.js. This
-              project includes features such as user authentication, product
-              listings, and a shopping cart.
-            </p>
-          </div>
-          <!-- Add more projects as necessary -->
+        <div class="hero-cta reveal">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#contact">Contact</a>
         </div>
       </section>
 
+      <section id="education">
+        <h2 class="section-title">Academic Qualification</h2>
+        <div class="card">
+          <h3>DePaul Institute of Science and Technology, Angamaly (2018 - 2023)</h3>
+          <p>Post-Graduation: IMCA, M G University Kottayam</p>
+        </div>
+      </section>
+
+      <section id="training">
+        <h2 class="section-title">Professional Training</h2>
+        <div class="timeline">
+          <article class="card">
+            <h3>Techmindz Software Training Institute, Carnival Infopark Kakkanad</h3>
+            <p>
+              MERN Stack Developer Training (February 2024 - October 2024). Completed an
+              intensive 8-month program with practical web development and software
+              engineering exposure.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          <article class="project card">
+            <h3>Netflix Official Site / Sign-in / Netflix India Pages Clone</h3>
+            <p>
+              Stack: HTML, CSS, Bootstrap, JavaScript. Built responsive clone pages using
+              Flexbox, Grid layouts, and media queries for better multi-device behavior.
+            </p>
+          </article>
+          <article class="project card">
+            <h3>Doctor Booking App</h3>
+            <p>
+              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js, MongoDB.
+              Developed a platform for patients and doctors using MVC architecture.
+            </p>
+          </article>
+          <article class="project card">
+            <h3>To-Do List App</h3>
+            <p>
+              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js, MongoDB.
+              Implemented CRUD operations with real-time updates and responsive UI using
+              Express.js server setup.
+            </p>
+          </article>
+          <article class="project card">
+            <h3>Scribble Whiteboard Project</h3>
+            <p>
+              Stack: Node.js, Express, Socket.IO, MongoDB, HTML, CSS, JavaScript.
+              Real-time multi-user whiteboard with room-based collaboration, share links,
+              undo/redo, and optional MongoDB persistence.
+              <a href="https://github.com/innuya/Scribble-Whiteboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              |
+              <a href="https://scribble-whiteboard.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            </p>
+          </article>
+          <article class="project card">
+            <h3>Musical Bells Project</h3>
+            <p>
+              Stack: Node.js, Express, HTML, CSS, JavaScript, Web Audio API.
+              Browser-based musical bells app with keyboard controls, rhythm recording, loop
+              playback, tempo control, and saved compositions via localStorage.
+              <a href="https://github.com/innuya/MusicalBells" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              |
+              <a href="https://musicalbells.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="split">
+          <article class="card">
+            <h3>Languages</h3>
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">C</span>
+              <span class="chip">C++</span>
+              <span class="chip">C#</span>
+              <span class="chip">SQL</span>
+              <span class="chip">PHP</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Frameworks / Libraries</h3>
+            <div class="chips">
+              <span class="chip">Bootstrap</span>
+              <span class="chip">React</span>
+              <span class="chip">Lodash</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">Mongoose</span>
+            </div>
+          </article>
+        </div>
+        <article class="card" style="margin-top: 0.9rem">
+          <h3>Developer Tools</h3>
+          <div class="chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Figma</span>
+          </div>
+        </article>
+      </section>
+
       <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="submit_form.php" method="post">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Your Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+          <a class="card" href="tel:+918086981852">
+            <h3>Phone</h3>
+            <p>+91 8086981852</p>
+          </a>
+          <a class="card" href="mailto:chanjelthomaskallookkaran@gmail.com">
+            <h3>Email</h3>
+            <p>chanjelthomaskallookkaran@gmail.com</p>
+          </a>
+          <div class="card">
+            <h3>Profiles</h3>
+            <p>
+              <a href="https://www.linkedin.com/in/chanjel-thomas-51775a1b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              |
+              <a href="https://github.com/innuya/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://linkedin.com" target="_blank"
-          ><i class="fab fa-linkedin"></i> LinkedIn</a
-        >
-        <a href="https://github.com" target="_blank"
-          ><i class="fab fa-github"></i> GitHub</a
-        >
+      <div class="container">
+        <p>&copy; 2026 Chanjel Thomas.</p>
       </div>
     </footer>
-
-    <style>
-      body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background-color: #333;
-        padding: 10px 0; /* Adjusted padding for top and bottom */
-      }
-
-      nav {
-        max-width: 1200px; /* Set a max width for the nav */
-        margin: 0 auto; /* Center the nav */
-        padding: 0 20px; /* Add horizontal padding */
-      }
-
-      nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap; /* Allow items to wrap */
-        justify-content: center; /* Center items */
-      }
-
-      nav ul li {
-        margin: 0 15px; /* Space between items */
-      }
-
-      nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        transition: color 0.3s ease; /* Smooth transition for hover effect */
-      }
-
-      nav ul li a i {
-        margin-right: 5px; /* Space between icon and text */
-        font-size: 1.2rem; /* Icon size */
-      }
-
-      nav ul li a:hover {
-        color: #ff6347; /* Default hover color for nav links */
-      }
-
-      nav ul li a:focus {
-        outline: 3px solid #ff6347; /* Focus outline for accessibility */
-      }
-
-      section {
-        padding: 50px;
-        margin: 20px 0;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      h1,
-      h2 {
-        color: #333;
-      }
-
-      h3 {
-        color: #333;
-        margin-top: 15px; /* Space above project titles */
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #555;
-      }
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .social-links {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .social-links a {
-        color: #fff;
-        margin: 0 15px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        transition: color 0.3s ease; /* Smooth transition for hover effect */
-      }
-
-      .social-links a i {
-        margin-right: 5px; /* Space between icon and text */
-        font-size: 1.2rem; /* Icon size */
-      }
-
-      /* Authentic colors for social media icons */
-      .facebook:hover {
-        color: #3b5998; /* Facebook hover color */
-      }
-
-      .twitter:hover {
-        color: #1da1f2; /* Twitter hover color */
-      }
-
-      .social-links a[href*='linkedin.com']:hover {
-        color: #0077b5; /* LinkedIn hover color */
-      }
-
-      .social-links a[href*='github.com']:hover {
-        color: #333; /* GitHub hover color */
-      }
-
-      .social-links a:focus {
-        outline: 3px solid #ff6347; /* Focus outline for accessibility */
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-      }
-
-      label {
-        font-size: 1rem;
-        margin-bottom: 5px;
-      }
-
-      input,
-      textarea {
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease; /* Smooth transition for focus effect */
-      }
-
-      input:focus,
-      textarea:focus {
-        border-color: #ff6347; /* Change border color on focus */
-        outline: none; /* Remove default outline */
-      }
-
-      button {
-        padding: 10px 20px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-        border-radius: 4px;
-        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-      }
-
-      button:hover {
-        background-color: #ff6347;
-      }
-
-      button:active {
-        background-color: #e5533d; /* Darker shade when clicked */
-      }
-
-      button:focus {
-        outline: 3px solid #ff6347; /* Focus outline for accessibility */
-      }
-
-      a:hover {
-        color: #ff6347;
-        text-decoration: underline;
-      }
-
-      @media screen and (max-width: 768px) {
-        nav ul {
-          flex-direction: column; /* Stack items vertically on small screens */
-          align-items: center;
-        }
-
-        section {
-          padding: 30px; /* Reduce padding on smaller screens */
-        }
-
-        form {
-          width: 90%; /* Make form responsive */
-        }
-
-        h1 {
-          font-size: 1.5rem; /* Adjust heading size for smaller screens */
-        }
-
-        h2 {
-          font-size: 1.25rem; /* Adjust subheading size for smaller screens */
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        nav ul li {
-          margin: 10px 0; /* Adjust margin for mobile */
-        }
-
-        button {
-          width: 100%; /* Make button full width on mobile */
-        }
-      }
-    </style>
   </body>
 </html>
