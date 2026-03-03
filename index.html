@@ -33,7 +33,7 @@
 
       body {
         margin: 0;
-        font-family: "Outfit", sans-serif;
+        font-family: 'Outfit', sans-serif;
         color: var(--text);
         background:
           radial-gradient(circle at 15% 5%, #18466e 0%, transparent 38%),
@@ -44,7 +44,10 @@
       .grain {
         position: fixed;
         inset: 0;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.07) 1px,
+          transparent 1px
+        );
         background-size: 3px 3px;
         opacity: 0.05;
         pointer-events: none;
@@ -73,7 +76,7 @@
       }
 
       .brand {
-        font-family: "Space Grotesk", sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
         font-weight: 700;
         letter-spacing: 0.08em;
       }
@@ -116,7 +119,7 @@
 
       h1 {
         margin: 0;
-        font-family: "Space Grotesk", sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(2.1rem, 4.7vw, 4rem);
         line-height: 1.05;
         max-width: 14ch;
@@ -161,7 +164,7 @@
       }
 
       .section-title {
-        font-family: "Space Grotesk", sans-serif;
+        font-family: 'Space Grotesk', sans-serif;
         font-size: 1.7rem;
         margin: 0 0 1rem;
       }
@@ -289,10 +292,13 @@
     <main class="container">
       <section class="hero" id="about">
         <div class="eyebrow reveal">MERN Stack Developer</div>
-        <h1 class="reveal">Building responsive and practical web experiences.</h1>
+        <h1 class="reveal">
+          Building responsive and practical web experiences.
+        </h1>
         <p class="reveal">
-          Postgraduate in IMCA from M G University with focused MERN stack training and
-          hands-on project development in frontend and backend systems.
+          Postgraduate in IMCA from M G University with focused MERN stack
+          training and hands-on project development in frontend and backend
+          systems.
         </p>
         <div class="hero-cta reveal">
           <a class="btn" href="#projects">View Projects</a>
@@ -303,7 +309,9 @@
       <section id="education">
         <h2 class="section-title">Academic Qualification</h2>
         <div class="card">
-          <h3>DePaul Institute of Science and Technology, Angamaly (2018 - 2023)</h3>
+          <h3>
+            DePaul Institute of Science and Technology, Angamaly (2018 - 2023)
+          </h3>
           <p>Post-Graduation: IMCA, M G University Kottayam</p>
         </div>
       </section>
@@ -312,11 +320,13 @@
         <h2 class="section-title">Professional Training</h2>
         <div class="timeline">
           <article class="card">
-            <h3>Techmindz Software Training Institute, Carnival Infopark Kakkanad</h3>
+            <h3>
+              Techmindz Software Training Institute, Carnival Infopark Kakkanad
+            </h3>
             <p>
-              MERN Stack Developer Training (February 2024 - October 2024). Completed an
-              intensive 8-month program with practical web development and software
-              engineering exposure.
+              MERN Stack Developer Training (February 2024 - October 2024).
+              Completed an intensive 8-month program with practical web
+              development and software engineering exposure.
             </p>
           </article>
         </div>
@@ -328,45 +338,69 @@
           <article class="project card">
             <h3>Netflix Official Site / Sign-in / Netflix India Pages Clone</h3>
             <p>
-              Stack: HTML, CSS, Bootstrap, JavaScript. Built responsive clone pages using
-              Flexbox, Grid layouts, and media queries for better multi-device behavior.
+              Stack: HTML, CSS, Bootstrap, JavaScript. Built responsive clone
+              pages using Flexbox, Grid layouts, and media queries for better
+              multi-device behavior.
             </p>
           </article>
           <article class="project card">
             <h3>Doctor Booking App</h3>
             <p>
-              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js, MongoDB.
-              Developed a platform for patients and doctors using MVC architecture.
+              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js,
+              MongoDB. Developed a platform for patients and doctors using MVC
+              architecture.
             </p>
           </article>
           <article class="project card">
             <h3>To-Do List App</h3>
             <p>
-              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js, MongoDB.
-              Implemented CRUD operations with real-time updates and responsive UI using
-              Express.js server setup.
+              Stack: HTML, CSS, Bootstrap, React, Node.js, EJS, Express.js,
+              MongoDB. Implemented CRUD operations with real-time updates and
+              responsive UI using Express.js server setup.
             </p>
           </article>
           <article class="project card">
             <h3>Scribble Whiteboard Project</h3>
             <p>
-              Stack: Node.js, Express, Socket.IO, MongoDB, HTML, CSS, JavaScript.
-              Real-time multi-user whiteboard with room-based collaboration, share links,
-              undo/redo, and optional MongoDB persistence.
-              <a href="https://github.com/innuya/Scribble-Whiteboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              Stack: Node.js, Express, Socket.IO, MongoDB, HTML, CSS,
+              JavaScript. Real-time multi-user whiteboard with room-based
+              collaboration, share links, undo/redo, and optional MongoDB
+              persistence.
+              <a
+                href="https://github.com/innuya/Scribble-Whiteboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub Repo</a
+              >
               |
-              <a href="https://scribble-whiteboard.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              <a
+                href="https://scribble-whiteboard.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live Demo</a
+              >
             </p>
           </article>
           <article class="project card">
             <h3>Musical Bells Project</h3>
             <p>
               Stack: Node.js, Express, HTML, CSS, JavaScript, Web Audio API.
-              Browser-based musical bells app with keyboard controls, rhythm recording, loop
-              playback, tempo control, and saved compositions via localStorage.
-              <a href="https://github.com/innuya/MusicalBells" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+              Browser-based musical bells app with keyboard controls, rhythm
+              recording, loop playback, tempo control, and saved compositions
+              via localStorage.
+              <a
+                href="https://github.com/innuya/MusicalBells"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub Repo</a
+              >
               |
-              <a href="https://musicalbells.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              <a
+                href="https://musical-bells.vercel.app//"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live Demo</a
+              >
             </p>
           </article>
         </div>
@@ -426,9 +460,19 @@
           <div class="card">
             <h3>Profiles</h3>
             <p>
-              <a href="https://www.linkedin.com/in/chanjel-thomas-51775a1b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a
+                href="https://www.linkedin.com/in/chanjel-thomas-51775a1b7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
               |
-              <a href="https://github.com/innuya/" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a
+                href="https://github.com/innuya/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
             </p>
           </div>
         </div>
